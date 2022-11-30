@@ -37,7 +37,8 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-        System.out.println("Total Price:"+this.price);
-        return this.bill;
+//        System.out.println("Total Price:"+this.price);
+//        System.out.println("");
+        return ("Total Price: "+this.price+"\n");
     }
 }
