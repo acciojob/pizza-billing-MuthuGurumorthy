@@ -38,6 +38,7 @@ public class Pizza {
             this.extraToppingPrice = 120;
         }
 
+        this.extraCheesePrice = 80;
         this.bill = "Base Price Of The Pizza: "+this.price+"\n";
 
     }
