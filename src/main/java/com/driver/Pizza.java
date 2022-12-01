@@ -26,6 +26,7 @@ public class Pizza {
         this.isCheeseAdded = false;
         this.isToppingAdded = false;
         this.isTakeAwayAdded = false;
+        this.isBillGenerated = false;
         this.isVeg = isVeg;
         // your code goes here
         if(isVeg == true){
@@ -37,7 +38,7 @@ public class Pizza {
             this.extraToppingPrice = 120;
         }
 
-        this.bill = "Base Price Of the Pizza: "+this.price+"\n";
+        this.bill = "Base Price Of The Pizza: "+this.price+"\n";
 
     }
 
