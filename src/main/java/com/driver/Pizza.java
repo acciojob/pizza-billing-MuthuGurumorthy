@@ -37,9 +37,8 @@ public class Pizza {
             this.extraToppingPrice = 120;
         }
 
-        System.out.print("Base Price Of the Pizza: ");
+        this.bill = "Base Price Of the Pizza: "+this.price+"\n";
 
-        this.bill="";
     }
 
     public int getPrice(){
