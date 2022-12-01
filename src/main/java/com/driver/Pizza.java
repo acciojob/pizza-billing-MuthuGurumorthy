@@ -39,6 +39,7 @@ public class Pizza {
         }
 
         this.extraCheesePrice = 80;
+        this.takeAwayPrice = 20;
         this.bill = "Base Price Of The Pizza: "+this.price+"\n";
 
     }
