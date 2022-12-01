@@ -4,13 +4,42 @@ public class Pizza {
 
     private int price;
     private Boolean isVeg;
+
     private String bill;
 
+    private int extraCheesePrice;
+
+    private int extraToppingPrice;
+
+    private int takeAwayPrice;
+
+    private boolean isCheeseAdded;
+
+    private boolean isToppingAdded;
+
+    private boolean isTakeAwayAdded;
+
+    private boolean isBillGenerated;
+
     public Pizza(Boolean isVeg){
+
+        this.isCheeseAdded = false;
+        this.isToppingAdded = false;
+        this.isTakeAwayAdded = false;
         this.isVeg = isVeg;
         // your code goes here
-        this.price+=(isVeg?300:400);
-        System.out.print("Base Price Of The Pizza: ");
+        if(isVeg == true){
+            this.price = 300;
+            this.extraToppingPrice = 70;
+        }
+        else{
+            this.price = 400;
+            this.extraToppingPrice = 120;
+        }
+
+        System.out.print("Base Price Of the Pizza: ");
+
+        this.bill="";
     }
 
     public int getPrice(){
@@ -18,27 +47,42 @@ public class Pizza {
     }
 
     public void addExtraCheese(){
-        // your code goes here
-        this.price+=80;
-        System.out.println("Extra Cheese Added: 80");
+        if(isCheeseAdded == false){
+            this.price += this.extraCheesePrice;
+            isCheeseAdded = true;
+        }
     }
 
     public void addExtraToppings(){
-        // your code goes here
-        this.price+=isVeg?70:120;
-        System.out.println("Extra Toppings Added: "+(isVeg?"70":"120"));
+        if(isToppingAdded == false){
+            this.price += this.extraToppingPrice;
+            isToppingAdded = true;
+        }
     }
 
     public void addTakeaway(){
-        // your code goes here
-        this.price+=20;
-        System.out.println("Paperbag Added: 20");
+        if(isTakeAwayAdded == false){
+            this.price += this.takeAwayPrice;
+            isTakeAwayAdded = true;
+        }
     }
 
     public String getBill(){
-        // your code goes here
-//        System.out.println("Total Price:"+this.price);
-//        System.out.println("");
-        return ("Total Price: "+this.price+"\n");
+        if(isBillGenerated == false){
+
+            isBillGenerated = true;
+
+            if(isCheeseAdded == true)
+                this.bill += "Extra Cheese Added: "+this.extraCheesePrice+"\n";
+
+            if(isToppingAdded == true)
+                this.bill += "Extra Toppings Added: "+this.extraToppingPrice+"\n";
+
+            if(isTakeAwayAdded == true)
+                this.bill += "Paperbag Added: "+this.takeAwayPrice+"\n";
+
+            this.bill += "Total Price: "+this.price+"\n";
+        }
+        return this.bill;
     }
 }
