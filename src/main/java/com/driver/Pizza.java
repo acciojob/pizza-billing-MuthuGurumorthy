@@ -10,7 +10,7 @@ public class Pizza {
         this.isVeg = isVeg;
         // your code goes here
         this.price+=(isVeg?300:400);
-        System.out.println("Base Price Of The Pizza: "+(isVeg?"300":"400"));
+        System.out.print("Base Price Of The Pizza: ");
     }
 
     public int getPrice(){
